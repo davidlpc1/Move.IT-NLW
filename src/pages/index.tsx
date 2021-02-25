@@ -8,8 +8,8 @@ import Profile from "../components/Profile";
 import ChallengeBox from "../components/ChallengeBox";
 
 import styles from "../styles/pages/Home.module.css";
+import { motion } from 'framer-motion';
 import { CountdownProvider } from "../contexts/CountdownContext";
-
 
 export default function Home() {
   return (
@@ -18,18 +18,47 @@ export default function Home() {
         <title>Início | Move.it</title>
       </Head>
 
-      <ExperienceBar />
+      <motion.div
+        transition={{ delay: 0.5, duration: 0.75 }}
+        variants={{
+          show: { opacity: 1, y: '0' },
+          hidden: { opacity: 0, y: '100%' },
+        }}
+        initial="hidden"
+        animate="show"
+      >
+        <ExperienceBar />
+      </motion.div>
+
 
       <CountdownProvider>
         <section>
-          <div>
+          <motion.div
+            transition={{ delay: 1, duration: 0.75 }}
+            variants={{
+              show: { opacity: 1, y: '0' },
+              hidden: { opacity: 0, y: '100%' },
+            }}
+            initial="hidden"
+            animate="show"
+          >
             <Profile />
             <CompletedChallenges />
             <Countdown />
-          </div>
-          <div>
+          </motion.div>
+
+          <motion.div
+            transition={{ delay: 1.25, duration: 0.75 }}
+            variants={{
+              show: { opacity: 1, y: '0' },
+              hidden: { opacity: 0, y: '100%' },
+            }}
+            initial="hidden"
+            animate="show"
+          >
             <ChallengeBox />
-          </div>
+
+          </motion.div>
         </section>
       </CountdownProvider>
     </div>
