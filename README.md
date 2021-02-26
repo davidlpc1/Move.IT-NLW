@@ -1,36 +1,86 @@
-# Move.IT
+<h1 align="center">  
+    <a href="https://move-it-davidlpc1.vercel.app/">Move IT</a>
+</h1>
+<h2 align="center">🚀 Stay healthy in your work 🚀</h2>
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src=".github/moveit.gif" alt="Home">
 
-## Getting Started
+Content
+=================
+   * [About](#About)
+   * [Technologies](#Technologies)
+   * [Downloading](#Downloading)
+   * [StartingTheApp](#StartingTheApp)
+  
+<h3 align="center"> 
+	🚧 Build in progress... 🚧
+</h3>
+ 
+<div id="About">    
 
-First, run the development server:
+## About
+### This is @ davidlpc1's Next Level Week#4 project
 
-```bash
-npm run dev
-# or
-yarn dev
+### The project proposes that you study in your computer and do exercises in a pomodoro cicle
+
+</div>
+
+<div id="Downloading">
+
+## Downloading
+
+<strong><a href="https://github.com/davidlpc1/Move.IT-NLW/archive/main.zip">Download ZIP</a></strong>
+<strong>OR</strong>
+
+```
+git clone https://github.com/davidlpc1/Move.IT-NLW
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+</div>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<div id="Technologies">
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## Technologies
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<code><img  height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png" alt="HTML"></code>
+<code><img  height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png" alt="CSS"></code>
+<code><img height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png" alt="JavaScript"></code>
+<code><img height="50" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" alt="React"></code>
+</div>
 
-## Learn More
+<div id="StartingTheApp">
 
-To learn more about Next.js, take a look at the following resources:
+## Terminal 
+```
+    yarn 
+    yarn dev
+```
+</div>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- [x] CSS Modules 
+- [x] Countdown 
+- [x] Context API
+- [x] Cookies
+- [x] Animation with framer-motion
+- [ ] Login with Github
+- [ ] Sidebar
+- [ ] Dark mode
+- [ ] LeaderBoard
+- [ ] Share results in Twitter
+- [ ] PWA
 
-## Deploy on Vercel
+### Autor
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<a href="https://github.com/davidlpc1">
+ <img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/66884233?v=4" width="100px;" alt="">
+ <br />
+ <sub><b>Davi Lucas</b></sub></a> <a href="https://app.rocketseat.com.br/me/davi-lucas-marques-de-freitas-04149">🚀</a>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+Made with ❤️ by Davi Lucas 👋🏽 Contact me!
+
+[![Twitter Badge](https://img.shields.io/badge/-@ProgramadorDavi-1ca0f1?style=flat-square&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/ProgramadorDavi)](https://twitter.com/ProgramadorDavi) [![Linkedin Badge](https://img.shields.io/badge/-Davi-Lucas?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/davi-lucas-93abb71b3/)](https://www.linkedin.com/in/davi-lucas-93abb71b3/) 
+[![Gmail Badge](https://img.shields.io/badge/-davilucasdlcreator@gmail.com-c14438?)](mailto:davilucasdlcreator@gmail.com)
