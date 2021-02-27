@@ -15,6 +15,7 @@ import { ChallengesProvider } from "../contexts/ChallengesContext";
 
 import { motion } from "framer-motion";
 import { motionProps } from "../utils/motionProps";
+import ChangeThemeButton from "../components/ChangeThemeButton";
 
 interface HomeProps {
   level: number;
@@ -36,6 +37,7 @@ export default function Home(props: HomeProps) {
         </Head>
 
         <Sidebar homeIsActive={true} />
+        <ChangeThemeButton />
 
         <motion.div
           transition={{ delay: 0.5, duration: 0.75 }}
@@ -80,7 +82,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     name: username,
     challengesCompleted:Number(challengesCompleted),
     level:Number(level),
-    totalExperience: Number(currentExperience),
+    currentExperience: Number(currentExperience),
+    totalExperience:0
   });
 
   return {

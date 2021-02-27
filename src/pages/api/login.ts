@@ -1,6 +1,6 @@
 import axios from "axios";
 import dotenv from 'dotenv';
-import { NextApiResponse } from "next";
+import { NextApiResponse,NextApiRequest } from "next";
 import { serialize, CookieSerializeOptions } from "cookie";
 
 const setCookie = (
@@ -22,7 +22,7 @@ const setCookie = (
   res.setHeader("Set-Cookie", serialize(name, String(stringValue), options));
 };
 
-export default async function Login(req, res) {
+export default async function Login(req:NextApiRequest, res:NextApiResponse) {
   dotenv.config();
 
   const { code } = req.query;

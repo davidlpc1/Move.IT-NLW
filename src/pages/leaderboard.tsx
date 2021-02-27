@@ -4,6 +4,7 @@ import { GetServerSideProps } from "next";
 import Sidebar from "../components/Sidebar";
 
 import { ChallengesProvider } from "../contexts/ChallengesContext";
+import ChangeThemeButton from "../components/ChangeThemeButton";
 
 interface HomeProps {
   level:number ;
@@ -24,6 +25,7 @@ export default function Home(props:HomeProps) {
         </Head>
 
         <Sidebar homeIsActive={false} />
+        <ChangeThemeButton />
       </div>
     </ChallengesProvider>
   );

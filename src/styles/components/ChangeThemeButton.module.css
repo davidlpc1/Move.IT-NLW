@@ -1,0 +1,19 @@
+.changeThemeButtonContainer{
+    position:fixed;
+    top:1rem;
+    right:1rem;
+}
+
+.changeThemeButtonContainer button {
+    background:var(--title);
+    outline:none;
+    border:0;
+    border-radius: 50%;
+    padding:0.25rem;
+}
+
+
+.changeThemeButtonContainer button img {
+    width:3rem;
+    height: 3rem;
+}
