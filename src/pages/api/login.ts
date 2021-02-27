@@ -1,6 +1,8 @@
+import { Octokit } from "@octokit/core";
 import axios from "axios";
 
-export default function Login(req, res) {
+export default async function Login(req, res) {
+    let token;
     const body = {
         client_id: '4974563f2c8d1922e576',
         client_secret: '3621e940ee14206f28726fbb0963db952892f1e6',
@@ -11,7 +13,12 @@ export default function Login(req, res) {
         .post(`https://github.com/login/oauth/access_token`, body, opts)
         .then((res) => res.data["access_token"])
         .then((_token) => {
-            res.json({ _token });
+            token = _token;
+            return;
         })
         .catch((err) => res.status(500).json({ message: err.message }));
+
+    const octokit = new Octokit({ auth: token });
+    const responseOfApi = await octokit.request('GET https://api.github.com/user')
+    res.json(responseOfApi)
 }
