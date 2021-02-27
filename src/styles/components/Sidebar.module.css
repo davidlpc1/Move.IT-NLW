@@ -51,7 +51,7 @@
 
 .imageActive {
     position:relative;
-    border-left: 5px solid #5965E0;
+    border-left: 5px solid var(--blue);
     padding: 1.85rem;
 }
 
@@ -69,6 +69,6 @@ I don't know.This is not really working
     right:0;
     content:'';
 
-    background: #5965E0;
+    background: var(--blue);
     border-radius: 0px 5px 5px 0px;
 }  */

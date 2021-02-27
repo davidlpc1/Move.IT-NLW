@@ -52,7 +52,7 @@
     height: 5rem;
     padding:2rem;
 
-    background: linear-gradient(90deg, #4953B8 0%, rgba(73, 83, 184, 0.2) 100%);
+    background: linear-gradient(90deg, var(--blue-dark) 0%, rgba(73, 83, 184, 0.2) 100%);
     color:var(--white);
 
     font-size: 20px;

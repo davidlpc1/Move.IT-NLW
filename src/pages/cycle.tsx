@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { GetServerSideProps } from "next";
+import createUser from "./api/createUser";
 
 import CompletedChallenges from "../components/CompletedChallenges";
 import Countdown from "../components/Countdown";
@@ -13,21 +14,21 @@ import { CountdownProvider } from "../contexts/CountdownContext";
 import { ChallengesProvider } from "../contexts/ChallengesContext";
 
 import { motion } from "framer-motion";
-import { motionProps } from '../utils/motionProps';
+import { motionProps } from "../utils/motionProps";
 
 interface HomeProps {
-  level:number ;
-  currentExperience:number ;
-  challengesCompleted:number ;
-  username:string;
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
+  username: string;
 }
 
-export default function Home(props:HomeProps) {
+export default function Home(props: HomeProps) {
   return (
-    <ChallengesProvider 
-      level={props.level} 
-      currentExperience={props.currentExperience} 
-      challengesCompleted={props.challengesCompleted} 
+    <ChallengesProvider
+      level={props.level}
+      currentExperience={props.currentExperience}
+      challengesCompleted={props.challengesCompleted}
     >
       <div className={styles.container}>
         <Head>
@@ -68,14 +69,26 @@ export default function Home(props:HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const { level, currentExperience, challengesCompleted,username } = context.req.cookies;
+  const {
+    level,
+    currentExperience,
+    challengesCompleted,
+    username,
+  } = context.req.cookies;
   
+  createUser({
+    name: username,
+    challengesCompleted:Number(challengesCompleted),
+    level:Number(level),
+    totalExperience: Number(currentExperience),
+  });
+
   return {
     props: {
       level: Number(level),
-      currentExperience:Number(currentExperience),
-      challengesCompleted:Number(challengesCompleted),
-      username:String(username),
+      currentExperience: Number(currentExperience),
+      challengesCompleted: Number(challengesCompleted),
+      username: String(username),
     },
   };
 };
