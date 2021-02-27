@@ -64,8 +64,8 @@ git clone https://github.com/davidlpc1/Move.IT-NLW
 - [x] Context API
 - [x] Cookies
 - [x] Animation with framer-motion
-- [ ] Login with Github
-- [ ] Sidebar
+- [X] Login with Github
+- [X] Sidebar
 - [ ] Dark mode
 - [ ] LeaderBoard
 - [ ] Share results in Twitter
