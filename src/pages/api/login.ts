@@ -27,6 +27,7 @@ export default async function Login(req, res) {
 
   const { code } = req.query;
   const { client_id,client_secret } = process.env;
+  console.log(client_id, client_secret)
 
   const body = {
     client_id,
@@ -42,10 +43,13 @@ export default async function Login(req, res) {
     opts
   );
 
+  console.log(data)
+
   const userRequest = await axios.get("https://api.github.com/user", {
     headers: { Authorization: `token ${data.access_token}` },
   });
 
   setCookie(res,"username", userRequest.data.login);
+  console.log('Redirecting...')
   res.redirect('/cycle');
 }
