@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { GetServerSideProps } from "next";
-import createUser from "./api/createUser";
+// import createUser from "./api/createUser";
 
 import CompletedChallenges from "../components/CompletedChallenges";
 import Countdown from "../components/Countdown";
@@ -78,14 +78,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     username,
   } = context.req.cookies;
   
-  createUser({
-    name: username,
-    challengesCompleted:Number(challengesCompleted),
-    level:Number(level),
-    currentExperience: Number(currentExperience),
-    totalExperience:0
-  });
-
   return {
     props: {
       level: Number(level),
