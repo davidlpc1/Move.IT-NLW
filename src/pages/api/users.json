@@ -5,5 +5,12 @@
         "level": 1,
         "currentExperience": 0,
         "totalExperience": 0
+    },
+    {
+        "name": "diego3g",
+        "challengesCompleted": 0,
+        "level":2,
+        "currentExperience": 0,
+        "totalExperience": 0
     }
 ]
