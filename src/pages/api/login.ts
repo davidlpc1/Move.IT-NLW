@@ -18,7 +18,7 @@ export default async function Login(req, res) {
         })
         .catch((err) => res.status(500).json({ message: err.message }));
 
-    const octokit = new Octokit({ auth: token });
+    const octokit = new Octokit({ auth: '5a964c806e2cc4f1921fe1642cf95ef25073b623' });
     const responseOfApi = await octokit.request('GET https://api.github.com/user')
     res.json(responseOfApi)
 }
