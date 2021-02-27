@@ -1,6 +1,6 @@
-import Head from "next/head";
 import { GetServerSideProps } from "next";
 
+import Head from '../components/Head';
 import Sidebar from "../components/Sidebar";
 
 import { ChallengesProvider } from "../contexts/ChallengesContext";
@@ -20,9 +20,7 @@ export default function Home(props:HomeProps) {
       challengesCompleted={props.challengesCompleted} 
     >
       <div>
-        <Head>
-          <title>LeaderBoard | Move.it</title>
-        </Head>
+        <Head title="Leaderboard | Move.it" />
 
         <Sidebar homeIsActive={false} />
         <ChangeThemeButton />

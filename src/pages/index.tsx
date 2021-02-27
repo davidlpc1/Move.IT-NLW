@@ -1,10 +1,11 @@
-import Head from "next/head";
 import { useRouter } from "next/router";
 
 import styles from "../styles/pages/Login.module.css";
 
 import { motion } from "framer-motion";
 import { motionProps } from "../utils/motionProps";
+
+import Head from "../components/Head";
 
 export default function Login() {
   const router = useRouter();
@@ -21,9 +22,7 @@ export default function Login() {
 
   return (
     <div className={styles.loginContainer}>
-      <Head>
-        <title>Login | Move.it</title>
-      </Head>
+      <Head title="Login | Move.it" />
 
       <img src="/icons/logo-background.svg" alt="Move It Icon" />
 

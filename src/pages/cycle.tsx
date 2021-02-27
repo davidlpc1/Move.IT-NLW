@@ -1,7 +1,7 @@
-import Head from "next/head";
 import { GetServerSideProps } from "next";
 // import createUser from "./api/createUser";
 
+import Head from "../components/Head";
 import CompletedChallenges from "../components/CompletedChallenges";
 import Countdown from "../components/Countdown";
 import ExperienceBar from "../components/ExperienceBar";
@@ -32,9 +32,7 @@ export default function Home(props: HomeProps) {
       challengesCompleted={props.challengesCompleted}
     >
       <div className={styles.container}>
-        <Head>
-          <title>Início | Move.it</title>
-        </Head>
+        <Head title="Início | Move.it" />
 
         <Sidebar homeIsActive={true} />
         <ChangeThemeButton />
