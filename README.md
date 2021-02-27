@@ -66,7 +66,7 @@ git clone https://github.com/davidlpc1/Move.IT-NLW
 - [x] Animation with framer-motion
 - [X] Login with Github
 - [X] Sidebar
-- [ ] Dark mode
+- [X] Dark mode
 - [ ] LeaderBoard
 - [ ] Share results in Twitter
 - [ ] PWA

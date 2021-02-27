@@ -1,8 +1,5 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useState } from "react";
-
-import Cookies from "js-cookie";
 
 import styles from "../styles/pages/Login.module.css";
 
