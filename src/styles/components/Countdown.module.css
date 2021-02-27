@@ -42,6 +42,7 @@
   height: 5rem;
 
   margin-top: 2rem;
+  margin-bottom:0.5rem;
 
   display: flex;
   align-items: center;
@@ -81,6 +82,25 @@
 
 .countdownButtonActive:not(:disabled):hover svg path{
   fill:white
+}
+
+@keyframes animateButtonActive {
+  from {
+    width:0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.countdownButtonActive:not(:disabled)::after{
+  content:"";
+  background:var(--green);
+  position:absolute;
+  height: 0.25rem;
+  bottom:0;
+  left:0;
+  animation: animateButtonActive 1500s;
 }
 
 .countdownButton:disabled{

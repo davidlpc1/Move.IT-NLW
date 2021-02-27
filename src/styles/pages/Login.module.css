@@ -1,0 +1,88 @@
+.loginContainer{
+    height: 100vh;
+    width: 100%;
+    background-color: var(--blue);
+
+    display:flex;
+    justify-content:space-between;
+}
+
+.loginContainer section {
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    margin-right:4rem;
+    max-width: 440px;
+}
+
+.loginContainer section h2{
+    font-weight: 600;
+    font-size: 36px;
+    color: var(--white);
+    margin-top: 3.75rem;
+}
+
+.loginContainer section div,
+.loginContainer section form {
+    margin-top: 1.75rem;
+    display:flex;
+    align-items:center;
+}
+
+.loginContainer section > div span {
+    color:var(--text-highlight);
+
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+
+    margin-left:1rem;
+}
+
+.loginContainer section form input ,
+.loginContainer section form button {
+    border-radius: 5px 0px 0px 5px;
+    border:0;
+    outline:0;
+}
+
+.loginContainer section form input {
+    width: 21.25rem;
+    height: 5rem;
+    padding:2rem;
+
+    background: linear-gradient(90deg, #4953B8 0%, rgba(73, 83, 184, 0.2) 100%);
+    color:var(--white);
+
+    font-size: 20px;
+    line-height: 34px;
+}
+
+.loginContainer section form input::-webkit-input-placeholder,
+.loginContainer section form input:-moz-placeholder,
+.loginContainer section form input:-ms-input-placeholder {
+    color:var(--text-highlight);
+}
+
+.loginContainer section form button {
+    width: 5rem;
+    height: 5rem;
+}
+
+/* .loginContainer section form button:disabled{
+    background:var(--blue-dark);
+}
+
+.loginContainer section form button:not(:disabled){
+    background:var(--green);
+} */
+
+.loginContainer section form button{
+    background:var(--blue-dark);
+}
+
+.loginContainer section form button:hover{
+    background:var(--green);
+}
+
