@@ -1,5 +1,4 @@
 import { GetServerSideProps } from "next";
-import createUser from "./api/createUser";
 
 import Head from "../components/Head";
 import CompletedChallenges from "../components/CompletedChallenges";
@@ -18,6 +17,7 @@ import { motionProps } from "../utils/motionProps";
 import ChangeThemeButton from "../components/ChangeThemeButton";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import axios from "axios";
 
 interface HomeProps {
   level: number;
@@ -84,16 +84,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   } = context.req.cookies;
   
   if(username != null && username != undefined) {
-    createUser({
-      name: String(username),
-      challengesCompleted: Number(challengesCompleted),
-      level: Number(level),
-      currentExperience: Number(currentExperience),
-      totalExperience:0,
+    axios.post('https://move-it-davidlpc1.vercel.app/api/createUser',{
+      user:{
+        name: String(username),
+        challengesCompleted: Number(challengesCompleted),
+        level: Number(level),
+        currentExperience: Number(currentExperience),
+        totalExperience:0,
+      }
     })
   }
-
-
 
   return {
     props: {

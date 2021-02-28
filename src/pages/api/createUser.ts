@@ -1,6 +1,7 @@
 import fs from "fs";
 import users from "./users.json";
 import path from 'path';
+import { NextApiRequest, NextApiResponse } from "next";
 
 interface CreateUserProps {
   name: string;
@@ -10,7 +11,16 @@ interface CreateUserProps {
   totalExperience:number;
 }
 
-export default function createUser(user: CreateUserProps) {
+export default function createUser(req:NextApiRequest,res:NextApiResponse) {
+  const { user } = req.body;
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+
   if(!user.totalExperience){
     user.totalExperience = 0;
     for(let index = 1;index < user.level;index++){
@@ -23,7 +33,6 @@ export default function createUser(user: CreateUserProps) {
   if(index != -1) users[index] = user;
   else users.push(user);
 
-  console.error('dirname',__dirname)
-  fs.writeFileSync(path.join(__dirname,"./api/users.json"), JSON.stringify(users,null,4));
+  fs.writeFileSync(path.join(__dirname,"./users.json"), JSON.stringify(users,null,4));
   return;
 }
