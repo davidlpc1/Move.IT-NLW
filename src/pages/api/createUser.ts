@@ -1,5 +1,6 @@
 import fs from "fs";
 import users from "./users.json";
+import path from 'path';
 
 interface CreateUserProps {
   name: string;
@@ -22,5 +23,5 @@ export default function createUser(user: CreateUserProps) {
   if(index != -1) users[index] = user;
   else users.push(user);
 
-  fs.writeFileSync('src/pages/api/users.json', JSON.stringify(users,null,4));
+  fs.writeFileSync(path.join(__dirname,"users.json"), JSON.stringify(users,null,4));
 }
