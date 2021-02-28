@@ -1,6 +1,6 @@
 import fs from "fs";
 import { NextApiRequest, NextApiResponse } from "next";
-import users from "../../../users.json";
+import users from "../../../db/users.json";
 
 // interface CreateUserProps {
 //   name: string;
