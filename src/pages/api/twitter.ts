@@ -27,10 +27,10 @@ export default async function ShareOnTwitter(req:NextApiRequest, res:NextApiResp
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
             <meta property="twitter:card" content="summary_large_image" />
-            <meta property="twitter:url" content="${url}" />
-            <meta property="twitter:title" content={title} />
-            <meta property="twitter:description" content={description} />
-            <meta property="twitter:image" content={bg} />
+            <meta property="twitter:url" content="https://move-it-davidlpc1.vercel.app/" />
+            <meta property="twitter:title" content="Avancei de level no Move.it" />
+            <meta property="twitter:description" content="Stay Healty in your work" />
+            <meta property="twitter:image" content="${url}" />
 
             <title>Level Up | Moveit</title>
         </head>
