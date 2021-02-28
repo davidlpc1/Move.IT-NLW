@@ -103,7 +103,7 @@ export default function Leaderboard({ users, username }: LeaderboardProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const users = require("../../users.json");
+  const users = require("../../db/users.json");
   users.sort((a, b) => {
     if (a.level < b.level) {
       return 1;
