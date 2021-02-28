@@ -1,4 +1,4 @@
-import users from './users.json';
+import users from '../../../users.json';
 
 export default function usersHandler(request, response) {
   if (request.method === 'OPTIONS') {
