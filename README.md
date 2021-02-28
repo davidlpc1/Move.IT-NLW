@@ -67,9 +67,9 @@ git clone https://github.com/davidlpc1/Move.IT-NLW
 - [X] Login with Github
 - [X] Sidebar
 - [X] Dark mode
-- [ ] LeaderBoard
-- [ ] Share results in Twitter
+- [X] LeaderBoard
 - [X] PWA
+- [ ] Share results in Twitter
 
 ### Autor
 ---
