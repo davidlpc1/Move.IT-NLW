@@ -84,7 +84,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   } = context.req.cookies;
   
   if(username != null && username != undefined) {
-    axios.post('https://move-it-davidlpc1.vercel.app/api/createUser',{
+    axios.post('http://localhost:3000/api/createUser',{
       user:{
         name: String(username),
         challengesCompleted: Number(challengesCompleted),
