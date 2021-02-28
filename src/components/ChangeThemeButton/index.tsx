@@ -1,21 +1,21 @@
 import { useTheme } from "next-themes";
-import styles from '../../styles/components/ChangeThemeButton.module.css';
+import { motion } from "framer-motion";
+import { motionProps } from "../../utils/motionProps";
+import styles from "../../styles/components/ChangeThemeButton.module.css";
 
 export default function ChangeThemeButton() {
   const { theme, setTheme } = useTheme();
 
   return (
     <div className={styles.changeThemeButtonContainer}>
-      {theme === "light" && (
-        <button onClick={() => setTheme("dark")}>
-          <img src="/icons/night.svg" alt="Dark"/>
-        </button>
-      )}
-      {theme === "dark" && (
-        <button onClick={() => setTheme("light")}>
-          <img src="/icons/day.svg" alt="Light"/>
-        </button>
-      )}
+      <motion.button
+        transition={{ delay: 0.1, duration: 0.5 }}
+        {...motionProps}
+        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+      >
+        {theme === "light" && <img src="/icons/night.svg" alt="Dark" /> }
+        {theme === "dark" && <img src="/icons/day.svg" alt="Light" /> }
+      </motion.button>
     </div>
   );
 }

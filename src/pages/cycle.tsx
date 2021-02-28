@@ -16,6 +16,8 @@ import { ChallengesProvider } from "../contexts/ChallengesContext";
 import { motion } from "framer-motion";
 import { motionProps } from "../utils/motionProps";
 import ChangeThemeButton from "../components/ChangeThemeButton";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
 interface HomeProps {
   level: number;
@@ -25,6 +27,11 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
+  const router = useRouter();
+  useEffect(() => {
+    if(props.username === "undefined")  router.push('/')
+  },[])
+
   return (
     <ChallengesProvider
       level={props.level}

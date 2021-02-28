@@ -21,6 +21,7 @@
     line-height: 46px;
 
     color: var(--title);
+    margin-bottom: 1.25rem;
 }
 
 .mainContent table thead th {
@@ -32,35 +33,57 @@
     opacity: 0.5;
 }
 
+.space {
+    margin-top: 0.9rem;
+}
+
 .mainContent table tbody tr td:first-child{
     font-weight: 500;
     font-size: 24px;
     line-height: 29px;
     color: var(--text);
+    text-align: center;
 }
 
-.mainContent table tbody tr{
+.mainContent table tbody tr td{
     background:var(--white);
-    flex:1;
+    padding:0.6rem;
 }
 
 .userData{
     display:flex;
+    width:40rem;
 }
 
-.userData img {
+.userData > img {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
+    margin-left:1rem;
 }
 
-
 .userData div {
+    margin-left: 1rem;
     display:flex;
     flex-direction: column;
+    gap:0.25rem;
+}
+
+.userData div h3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--title);
 }
 
 .userData div  img{
     width:1rem;
     height:1rem;
+}
+
+.numberValueInPurple{
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 19px;
+    color:var(--blue)
 }
