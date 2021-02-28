@@ -34,7 +34,9 @@ export default async function ShareOnTwitter(req:NextApiRequest, res:NextApiResp
 
             <title>Level Up | Moveit</title>
         </head>
-        <body></body>
+        <body>
+            <img src="${url}" alt="Avancei de nível no Move.it" style="width: 100vw;heihgt:100vh;object-fit:cover;"></img>
+        </body>
         </html>
     `)
 }
