@@ -144,7 +144,7 @@ const getHTML = ({
             color: #666666;
         }
         .purple {
-            color:#5965E0;
+            color:#5965E0 !important;
         }
         .space-to-svg{
             margin-bottom: 40px;
