@@ -23,5 +23,5 @@ export default function createUser(user: CreateUserProps) {
   if(index != -1) users[index] = user;
   else users.push(user);
 
-  fs.writeFileSync(path.join(__dirname,"users.json"), JSON.stringify(users,null,4));
+  fs.writeFileSync(path.join(__dirname,"./api/users.json"), JSON.stringify(users,null,4));
 }
