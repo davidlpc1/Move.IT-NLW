@@ -13,9 +13,10 @@ export default async function ShareOnTwitter(req:NextApiRequest, res:NextApiResp
     const { name } = req.query;
 
     const { data } = await axios.get(`https://moveit-json.herokuapp.com/users?name=${name}`)
+    if(data.length === 0) return;
     const user : User = data[0];
 
-    const url = `http://localhost:3000/api/image?level=${user.level}&challengesCompleted=${user.challengesCompleted}&totalExperience=${user.totalExperience}`
+    const url = `https://move-it-davidlpc1.vercel.app/api/image?level=${user.level}&challengesCompleted=${user.challengesCompleted}&totalExperience=${user.totalExperience}`
       
     return res.send(`
         <!DOCTYPE html>
