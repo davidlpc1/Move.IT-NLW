@@ -89,7 +89,7 @@ export default function Leaderboard({ users, username }: LeaderboardProps) {
                     <span className={styles.numberValueInPurple}>
                       {user.totalExperience}
                     </span>{" "}
-                    Completados
+                    xp
                   </td>
                 </tr>
                 <div className={styles.space} />
