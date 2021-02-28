@@ -106,7 +106,15 @@ export default function Leaderboard({ users, username }: LeaderboardProps) {
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { data } = await axios.get('https://moveit-json.herokuapp.com/users');
 
-  data.sort((a, b) => {
+  interface User {
+    name: string;
+    challengesCompleted: number;
+    level: number;
+    currentExperience: number;
+    totalExperience: number;
+  }
+
+  data.sort((a: User, b: User) => {
     if (a.level < b.level) {
       return 1;
     }
