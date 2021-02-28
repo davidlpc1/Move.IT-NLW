@@ -11,6 +11,7 @@ import { motionProps } from "../utils/motionProps";
 import styles from "../styles/pages/Leaderboard.module.css";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import axios from "axios";
 
 interface LeaderboardProps {
   users: [
@@ -103,8 +104,9 @@ export default function Leaderboard({ users, username }: LeaderboardProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const users = require("../../db/users.json");
-  users.sort((a, b) => {
+  const { data } = await axios.get('https://moveit-json.herokuapp.com/users');
+
+  data.sort((a, b) => {
     if (a.level < b.level) {
       return 1;
     }
@@ -118,7 +120,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
   return {
     props: {
-      users,
+      users: data,
       username: String(username),
     },
   };

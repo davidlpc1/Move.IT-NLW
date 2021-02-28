@@ -29,8 +29,8 @@ interface HomeProps {
 export default function Home(props: HomeProps) {
   const router = useRouter();
   useEffect(() => {
-    if(props.username === "undefined")  router.push('/')
-  },[])
+    if (props.username === "undefined") router.push("/");
+  }, []);
 
   return (
     <ChallengesProvider
@@ -82,17 +82,43 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     challengesCompleted,
     username,
   } = context.req.cookies;
-  
-  if(username != null && username != undefined) {
-    axios.post('https://move-it-davidlpc1.vercel.app/api/createUser',{
-      user:{
-        name: String(username),
-        challengesCompleted: Number(challengesCompleted),
-        level: Number(level),
-        currentExperience: Number(currentExperience),
-        totalExperience:0,
-      }
-    })
+
+  if (username != null && username != undefined) {
+    const { data } = await axios.get(`https://moveit-json.herokuapp.com/users?name=${username}`)
+
+    let totalExperience = 0;
+    for(let index = 1;index < Number(level);index++){
+      totalExperience += Math.pow((index + 1) * 4, 2)
+    }
+    totalExperience += Number(currentExperience);
+
+    if(data.length === 0){
+      fetch("https://moveit-json.herokuapp.com/users", {
+        method: "POST",
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify({
+          name: String(username),
+          challengesCompleted: Number(challengesCompleted),
+          level: Number(level),
+          currentExperience: Number(currentExperience),
+          totalExperience,
+        }),
+      });
+    }else{
+      const { id } = data[0]
+      fetch(`https://moveit-json.herokuapp.com/users/${id}`, {
+        method: "PUT",
+        headers:{"Content-Type": "application/json"},
+        body: JSON.stringify({
+          name: String(username),
+          challengesCompleted: Number(challengesCompleted),
+          level: Number(level),
+          currentExperience: Number(currentExperience),
+          totalExperience,
+        }),
+      });
+    }
+   
   }
 
   return {
