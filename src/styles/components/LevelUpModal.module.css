@@ -15,7 +15,7 @@
     background: var(--white);
     width: 100%;
     max-width: 400px;
-    padding: 2rem 3rem;
+    padding: 2rem 3rem 0.5rem;
     border-radius: 5px;
     box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
     text-align: center;
@@ -41,6 +41,11 @@
     margin-top: 0.25rem;
 }
 
+.container p {
+    border-bottom: 0.05rem solid var(--gray-line);
+    padding-bottom: 1rem;
+}
+
 .container button {
     position: absolute;
     right: 0.5rem;
@@ -48,4 +53,26 @@
     background: transparent;
     border:0;
     font-size:0;
+}
+
+.container a {
+    cursor: pointer;
+
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    width:100%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+
+    color: var(--blue-twitter);
+    
+    border: 0.05rem solid var(--blue-twitter);
+    transition: filter 230ms;
+}
+
+.container a:hover{
+    filter:brightness(1.2)
 }
