@@ -22,28 +22,26 @@ const setCookie = (
   res.setHeader("Set-Cookie", serialize(name, String(stringValue), options));
 };
 
-export default async function Login(req:NextApiRequest, res:NextApiResponse) {
-  dotenv.config();
+const configDotenv = () =>  dotenv.config();
 
+const opts = { headers: { accept: "application/json" } };
+
+export default async function Login(req:NextApiRequest, res:NextApiResponse) {
+  configDotenv();
   const { code } = req.query;
   const { client_id,client_secret } = process.env;
-  console.log(client_id, client_secret)
 
   const body = {
     client_id,
     client_secret,
     code,
   };
-
-  const opts = { headers: { accept: "application/json" } };
   
   const { data } = await axios.post(
     `https://github.com/login/oauth/access_token`,
     body,
     opts
   );
-
-  console.log(data)
 
   const userRequest = await axios.get("https://api.github.com/user", {
     headers: { Authorization: `token ${data.access_token}` },
